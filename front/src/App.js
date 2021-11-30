@@ -1,15 +1,14 @@
-import React, { useReducer, createContext } from 'react';
+import React from 'react';
 import Form from './components/Form';
-import List from './components/List';
 import {StoreProvider} from './components/Store';
+import GroupField from './components/GroupField';
 
 function App() {
   return( 
     <StoreProvider>
       <div className="container">
-        <h3>Things to-do</h3>
         <Form />
-        <List />
+        <GroupField />
       </div>
     </StoreProvider>
   )

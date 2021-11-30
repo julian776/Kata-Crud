@@ -1,4 +1,4 @@
-import React,{useContext, useEffect, createContext} from 'react';
+import React,{useContext, useEffect} from 'react';
 import Store from './Store';
 const HOST_API = "http://localhost:8080/api";
 
@@ -13,8 +13,7 @@ const List = () => {
                 dispatch({ type: "update-list", list });
             });
     }, [dispatch]);
-
-
+    
     const onDelete = (id) => {
         fetch(HOST_API + "/" + id + "/todo", {
             method: "DELETE"

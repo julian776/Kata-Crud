@@ -32,6 +32,9 @@ function Reducer(state, action) {
         return { ...state, todo: {list: todoUp, item: {}} }
       default:
         return state;
+    //Manejo de grupos de listas
+
+
     }
 }
 

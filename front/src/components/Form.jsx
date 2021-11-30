@@ -4,9 +4,14 @@ const HOST_API = "http://localhost:8080/api";
 
 const Form = () => {
   const formRef = useRef(null);
-  const { dispatch, state: { todo } } = useContext(Store);
-  const item = todo.item;
+  const { dispatch, state: { todo } } = useContext(Store)
+  const item = todo.item
   const [state, setState] = useState(item);
+  
+  //grupos
+  const { dispatch1, state: { groups } } = useContext(Store)
+  const group = groups.list
+  const [groupsList, setGroup] = useState(group)
 
   const onAdd = (event) => {
     event.preventDefault();
@@ -61,10 +66,13 @@ const Form = () => {
     <input
       type="text"
       name="name"
-      placeholder="¿Qué piensas hacer hoy?"
+      placeholder="Type a new list"
       defaultValue={item.name}
       onChange={(event) => {
-        setState({ ...state, name: event.target.value })
+        //setState({ ...state, name: event.target.value })
+        try{
+          setGroup(groupsList.push(event.target.value))//Error, pero no se puede saber por que.
+        }catch(e){}
       }}  ></input>
     {item.id && <button onClick={onEdit}>Actualizar</button>}
     {!item.id && <button onClick={onAdd}>Crear</button>}
