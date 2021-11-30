@@ -3,7 +3,7 @@ import Reducer from './Reducer';
 
 const initialState = {
     todo: { list: [], item: {} },
-    groups: { list: [],item: {}} //Necesaria para guardar los grupos
+    groups: { list: [],item: {}} //Necesaria para guardar las secciones
   };
 
 const Store = createContext(initialState);
