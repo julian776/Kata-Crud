@@ -15,7 +15,6 @@ export const StoreProvider = ({ children }) => {
   return <Store.Provider value={{ state, dispatch }}>
       {children}
   </Store.Provider>
-  
   }
 
-  export default Store;
+export default Store;

@@ -1,5 +1,5 @@
-import React, {useState, useContext, useRef, createContext} from 'react';
-
+import React, {useState, useContext, useRef} from 'react';
+import Store from './Store';
 const HOST_API = "http://localhost:8080/api";
 
 const Form = () => {
